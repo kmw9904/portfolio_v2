@@ -18,7 +18,6 @@ export default function Contact() {
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-
     if (name === "name") {
       setAutoMessage(`${value}님, 안녕하세요! 메시지를 작성해 주세요.`);
     }

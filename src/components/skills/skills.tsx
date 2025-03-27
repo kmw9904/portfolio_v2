@@ -16,18 +16,11 @@ import {
   faServer,
 } from "@fortawesome/free-solid-svg-icons";
 import Skill from "./skill";
-import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
-
-export type Skill = {
-  id: number;
-  skill: string;
-  icon: IconDefinition;
-  color: string;
-};
+import { SkillData } from "@/types";
 
 export default function Skills() {
   let id = 0;
-  const skills: Skill[] = [
+  const skills: SkillData[] = [
     {
       id: id++,
       skill: "Python",

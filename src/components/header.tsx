@@ -5,6 +5,7 @@ import { faBars, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import Aside from "./aside";
 import { useState } from "react";
 import { useTheme } from "next-themes";
+import Link from "next/link";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,10 +14,12 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 bg-opacity-90 backdrop-blur-lg">
+      <header className="sticky top-0 bg-opacity-90 backdrop-blur-lg z-50">
         <nav className="container max-x-4xl mx-auto px-6 py-6 flex justify-between items-center">
           <div className="flex items-center space-x-4">
-            <h1 className="text-2xl font-bold">KMW</h1>
+            <Link href={"/"}>
+              <h1 className="text-2xl font-bold">KMW</h1>
+            </Link>
             <p className="text-yellow-400">✨내일이 더 빛나는 개발자</p>
           </div>
 

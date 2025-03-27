@@ -1,6 +1,9 @@
+import { IdCard } from "lucide";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Project({
+  id,
   img,
   title,
   skills,
@@ -20,12 +23,14 @@ export default function Project({
     <article className="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg ">
       <div className="relative w-full h-[500px] p-6">
         <div className="relative w-full h-full hover:scale-105 transition-transform duration-300">
-          <Image
-            src={img}
-            fill
-            alt={title}
-            className="object-cover rounded-xl"
-          />
+          <Link href={`/project/${id}`}>
+            <Image
+              src={img}
+              fill
+              alt={title}
+              className="object-cover rounded-xl"
+            />
+          </Link>
         </div>
       </div>
       <div className="p-4">

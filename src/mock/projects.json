@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "img": "/project1.png",
+    "title": "대출 정보 제공 플랫폼",
+    "skills": ["Vue", "JavaScript", "CSS3", "Django", "BootStrap"],
+    "github": "https://github.com/kmw9904/projects"
+  },
+  {
+    "id": 2,
+    "img": "/project2.png",
+    "title": "Lean Cansvas",
+    "skills": ["React", "JavaScript", "Tailwind-CSS", "Vercel"],
+    "github": "https://github.com/kmw9904/lean-canvas",
+    "live": "https://lean-canvas-rouge.vercel.app/"
+  },
+  {
+    "id": 3,
+    "img": "/project3.png",
+    "title": "TailwindCSS를 사용한 포트폴리오",
+    "skills": ["JavaScript", "Html5", "Tailwind-CSS", "Github-pages"],
+    "github": "https://github.com/kmw9904/portfolio",
+    "live": "https://kmw9904.github.io/portfolio/"
+  },
+  {
+    "id": 4,
+    "img": "/project4.png",
+    "title": "admin 사이트",
+    "skills": ["JavaScript", "Html5", "Tailwind-CSS", "Github-pages"],
+    "github": "https://github.com/kmw9904/admin-template",
+    "live": "https://kmw9904.github.io/admin-template/"
+  },
+  {
+    "id": 5,
+    "img": "/project5.png",
+    "title": "크롬 확장프로그램 TI와 소개 사이트",
+    "skills": ["JavaScript", "Html5", "Tailwind-CSS", "Vercel"],
+    "github": "https://github.com/kmw9904/TailwindCSS-Inspector",
+    "live": "https://tailwind-css-inspector.vercel.app/",
+    "address": "https://chromewebstore.google.com/detail/tailwind-css-inspector/mgmfijpcneljhcfbpkhaekgpaejgblkl?pli=1"
+  },
+  {
+    "id": 6,
+    "img": "/project6.png",
+    "title": "Next Page Router를 사용한 북페이지",
+    "skills": ["Next", "React", "JavaScript", "CSS", "Html5", "Vercel"],
+    "github": "https://github.com/kmw9904/learnNextjs/tree/main/section02",
+    "live": "https://onebite-books-page-ochre-psi.vercel.app/"
+  },
+  {
+    "id": 7,
+    "img": "/project7.png",
+    "title": "Next App Router를 사용한 북페이지",
+    "skills": ["Next", "React", "JavaScript", "CSS", "Html5", "Vercel"],
+    "github": "https://github.com/kmw9904/learnNextjs/tree/main/section03",
+    "live": "https://mw-books-app.vercel.app/"
+  }
+]

@@ -1,0 +1,40 @@
+{
+  "id": 1,
+  "img": "/project1.png",
+  "title": "대출 정보 제공 플랫폼",
+  "skills": ["Vue", "JavaScript", "CSS3", "Django", "BootStrap"],
+  "github": "https://github.com/kmw9904/projects",
+  "subtitle": [
+    "1. Vue 3 Composition API & Single File Component",
+    "2. Axios를 통한 Django API와의 통신",
+    "3. Vue Router를 이용한 페이지 간 라우팅",
+    "4. Pinia를 이용한 상태 관리 및 Persist",
+    "5. IntersectionObserver를 활용한 스크롤 애니메이션",
+    "6. Vuetify를 통한 UI 컴포넌트 활용",
+    "7. 컴포넌트 기반 UI 및 실시간 소통"
+  ],
+  "about": [
+    [
+      "Vue 3 Composition API & Single File Component: Vue 3의 Composition API와 Single File Component 구조를 활용하여, 코드의 재사용성과 유지보수성을 극대화하고, 모듈화된 컴포넌트 설계로 프로젝트의 확장성을 높였습니다."
+    ],
+    [
+      "Axios를 통한 Django API와의 통신: Axios를 이용해 백엔드와의 HTTP 요청(GET, POST 등)을 효과적으로 처리하며, 로그인, 회원가입, 데이터 조회 등의 기능을 구현하였습니다."
+    ],
+    [
+      "Vue Router를 이용한 페이지 간 라우팅: Vue Router를 활용하여 여러 뷰 간 원활한 이동을 구현, 사용자 경험을 향상시켰습니다."
+    ],
+    [
+      "Pinia를 이용한 상태 관리 및 Persist: Pinia를 통해 전역 상태를 중앙에서 관리하고, 페이지 리로드 시에도 상태를 유지하여 사용자 편의를 제공하였습니다."
+    ],
+    [
+      "IntersectionObserver를 활용한 스크롤 애니메이션: 사용자가 페이지를 스크롤할 때 특정 요소에 애니메이션 효과를 적용하여 시각적 즐거움을 더하였습니다."
+    ],
+    [
+      "Vuetify를 통한 UI 컴포넌트 활용: Vuetify의 다양한 UI 컴포넌트를 사용하여 일관성 있고 반응형인 디자인을 손쉽게 구현하였습니다."
+    ],
+    [
+      "컴포넌트 기반 UI 및 실시간 소통: 각 기능을 독립적인 컴포넌트로 분리하여 유지보수와 확장성을 높이고, 실시간 소통 기능을 통해 사용자와의 인터랙션을 원활하게 처리하였습니다."
+    ]
+  ],
+  "introduce": "현대 사회에서 **주택 마련**은 많은 사람들에게 큰 도전입니다.\n특히 대한민국에서는 집값의 급격한 상승으로 인해 자력으로 집을 구입할 수 있는 사람의 비율이 매우 낮습니다.\n\n이러한 현실에서 우리는 **어떻게 하면 보다 쉽게 금융 정보를 얻고, 합리적인 대출 계획을 세울 수 있을까요?**\n\n---\n\n## 🎯 프로젝트 목표\n\n- ✅ **이자율 자동 계산**\n- ✅ **월 납입금 비교 및 정렬**\n- ✅ **사용자 리뷰 및 평점 제공**\n\n---\n\n이 모든 것을 통해 금융 정보에 대한 **접근성을 높이고**, 사용자들이 **더 나은 재무 결정을 내릴 수 있도록 지원**합니다."
+}

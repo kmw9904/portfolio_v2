@@ -1,0 +1,33 @@
+{
+  "id": 5,
+  "img": "/project5.png",
+  "title": "크롬 확장프로그램 TI와 소개 사이트",
+  "skills": ["JavaScript", "Html5", "Tailwind-CSS", "Vercel"],
+  "github": "https://github.com/kmw9904/TailwindCSS-Inspector",
+  "live": "https://tailwind-css-inspector.vercel.app/",
+  "address": "https://chromewebstore.google.com/detail/tailwind-css-inspector/mgmfijpcneljhcfbpkhaekgpaejgblkl?pli=1",
+  "subtitle": [
+    "1. Tailwind CSS Inspector 확장 프로그램 UI 및 기능 구현",
+    "2. 직관적인 랜딩 페이지로 사용법 및 데모 제공",
+    "3. 다국어 지원 및 고급 애니메이션 효과 적용",
+    "4. 홈페이지와 확장 프로그램 두 버전 통합 관리"
+  ],
+  "about": [
+    [
+      "Chrome 확장 프로그램: 이 확장 프로그램은 사용자가 방문하는 웹페이지의 CSS 스타일을 자동으로 감지하고, 이를 Tailwind CSS 유틸리티 클래스로 변환합니다.",
+      "실시간 변환 결과와 함께 상세한 설명을 제공하여, 개발자가 코드를 빠르게 이해하고 수정할 수 있도록 돕습니다."
+    ],
+    [
+      "소개 사이트: TI의 주요 기능과 사용법을 데모 영상과 직관적인 UI를 통해 상세하게 안내합니다.",
+      "이를 통해 사용자는 확장 프로그램의 작동 방식과 활용 방법을 손쉽게 파악할 수 있습니다."
+    ],
+    [
+      "다국어 지원: 한글과 영어 인터페이스를 기본으로 제공하여, 전 세계 다양한 사용자가 언어 장벽 없이 도구를 활용할 수 있도록 설계되었습니다."
+    ],
+    [
+      "사용 기술 및 추가 기능: 이 프로젝트는 JavaScript, HTML5, Tailwind CSS, Chrome Extension API, Fetch API, 그리고 OpenAI GPT 연동 기술을 활용하여 고도화된 CSS→Tailwind 변환 기능을 구현하였습니다.",
+      "또한, content.js 스크립트는 구독 상태에 따른 GPT 사용 여부 결정, 동적 오버레이 및 사이드바 UI 생성, 이벤트 위임, 리사이징 등 다양한 고급 UI/UX 기법을 통합하여 사용자 인터랙션을 극대화합니다."
+    ]
+  ],
+  "introduce": "크롬 확장프로그램 TI와 소개 사이트 프로젝트는 CSS를 Tailwind CSS 유틸리티 클래스로 자동 변환하는 혁신적인 도구입니다.\n\n본 프로젝트는 두 부분으로 구성되어 있습니다:\n\n- **확장 프로그램**: 사용자가 Chrome 웹스토어에서 설치하여 웹페이지의 CSS를 실시간으로 Tailwind CSS 클래스로 변환하고, 상세 설명을 제공받을 수 있습니다.\n- **소개 사이트**: TI의 기능, 사용법, 그리고 변환 과정을 직관적으로 소개하는 랜딩 페이지로 구성되어, 사용자가 도구의 장점을 쉽게 이해할 수 있도록 돕습니다.\n\n또한, content.js 스크립트를 통해 구독 기반 GPT 연동, 동적 UI 생성, 이벤트 위임 및 리사이징 등의 고급 기능을 구현하여 사용자 경험을 한층 강화하였습니다."
+}

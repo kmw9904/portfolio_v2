@@ -16,7 +16,7 @@ export default function Aside({
     <aside
       className={`dark:bg-gray-900 dark:text-white bg-white text-black min-h-screen transition-colors block md:hidden fixed top-0 right-0 inset-y-0 ${
         isOpen ? "translate-x-0" : "translate-x-full"
-      }`}
+      } z-50`}
     >
       <button
         onClick={() => setIsOpen(false)}
@@ -25,19 +25,19 @@ export default function Aside({
         <FontAwesomeIcon icon={faTimes} />
       </button>
       <div className="flex flex-col items-start p-6 space-y-4">
-        <a href="" className="hover:text-blue-500 transition-colors">
+        <a href="#home" className="hover:text-blue-500 transition-colors">
           홈
         </a>
-        <a href="" className="hover:text-blue-500 transition-colors">
+        <a href="#about" className="hover:text-blue-500 transition-colors">
           소개
         </a>
-        <a href="" className="hover:text-blue-500 transition-colors">
+        <a href="#skills" className="hover:text-blue-500 transition-colors">
           기술
         </a>
-        <a href="" className="hover:text-blue-500 transition-colors">
+        <a href="#projects" className="hover:text-blue-500 transition-colors">
           프로젝트
         </a>
-        <a href="" className="hover:text-blue-500 transition-colors">
+        <a href="#contact" className="hover:text-blue-500 transition-colors">
           연락처
         </a>
         <button
