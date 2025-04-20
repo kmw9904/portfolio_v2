@@ -5,6 +5,7 @@ import Footer from "@/components/footer";
 import { ThemeProvider } from "next-themes";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import { ReactNode } from "react";
 config.autoAddCss = false;
 
 export const metadata: Metadata = {
@@ -14,8 +15,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  modal,
 }: Readonly<{
   children: React.ReactNode;
+  modal: ReactNode;
 }>) {
   return (
     <html lang="ko" suppressHydrationWarning className="scroll-smooth">
@@ -24,6 +27,8 @@ export default function RootLayout({
           <Header />
           {children}
           <Footer />
+          {modal}
+          <div id="modal-root"></div>
         </ThemeProvider>
       </body>
     </html>

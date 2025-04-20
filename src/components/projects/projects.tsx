@@ -40,21 +40,23 @@ export default function Projects() {
     <section id="projects" className="mb-30">
       <h2 className="text-3xl font-bold mb-6">프로젝트</h2>
       <div className="relative z-0">
-        <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
-          slidesPerView={1}
-          autoplay={{ delay: 3000 }}
-          loop={true}
-          onSwiper={(swiper) => (swiperRef.current = swiper)}
-          pagination={{ clickable: true }}
-          className="rounded-lg"
-        >
-          {projects.map((project) => (
-            <SwiperSlide key={project.id}>
-              <Project {...project} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        {projects.length > 0 && (
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            slidesPerView={1}
+            autoplay={{ delay: 3000 }}
+            loop={true}
+            onSwiper={(swiper) => (swiperRef.current = swiper)}
+            pagination={{ clickable: true } }
+            className="rounded-lg"
+          >
+            {projects.map((project) => (
+              <SwiperSlide key={project.id}>
+                <Project {...project} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        )}
 
         <div className="absolute left-1/2 -translate-x-1/2 -bottom-12 flex items-center gap-4">
           <button

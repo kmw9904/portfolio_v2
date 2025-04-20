@@ -20,14 +20,15 @@ export default function Project({
   address?: string;
 }) {
   return (
-    <article className="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg ">
-      <div className="relative w-full h-[500px] p-6">
+    <article className="flex flex-col justify-between h-full min-h-[500px] bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+      <div className="relative w-full h-[300px] md:h-[500px] p-4 md:p-6">
         <div className="relative w-full h-full hover:scale-105 transition-transform duration-300">
           <Link href={`/project/${id}`}>
             <Image
               src={img}
               fill
               alt={title}
+              priority
               className="object-cover rounded-xl"
             />
           </Link>
@@ -37,7 +38,7 @@ export default function Project({
         <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-100">
           {title}
         </h3>
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="flex flex-wrap gap-2 mb-4 mx-auto">
           {skills.map((skill, idx) => (
             <span
               className="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-700 dark:text-gray-300 dark:border-gray-600"
@@ -47,7 +48,7 @@ export default function Project({
             </span>
           ))}
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 pb-5">
           <a
             href={github}
             className="text-sm bg-gray-800 dark:bg-gray-300 text-white dark:text-gray-800 px-3 py-1 rounded-md"

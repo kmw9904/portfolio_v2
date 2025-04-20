@@ -13,6 +13,15 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      keyframes: {
+        "fade-scale-in": {
+          "0%": { opacity: 0, transform: "scale(0.95)" },
+          "100%": { opacity: 1, transform: "scale(1)" },
+        },
+      },
+      animation: {
+        "fade-scale-in": "fade-scale-in 0.25s ease-out",
+      },
     },
   },
   darkMode: "class", // 다크 모드를 클래스 기반으로 설정

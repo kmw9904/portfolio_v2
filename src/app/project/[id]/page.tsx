@@ -1,28 +1,42 @@
+"use client";
+
 import { IntroduceProjectData } from "@/types";
 import Image from "next/image";
-import { notFound } from "next/navigation";
+import { use, useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
+import { Loader2 } from "lucide-react";
 
-export default async function Page({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
-  const params_id = await params;
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/mock/project/${params_id.id}.json`
-  );
+export default function Page({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params);
+  const [project, setProject] = useState<IntroduceProjectData>();
 
-  if (!response.ok) {
-    throw new Error("데이터를 불러오는데 실패했습니다.");
-  }
+  useEffect(() => {
+    const fetchProject = async () => {
+      try {
+        const response = await fetch(`/mock/project/${id}.json`);
 
-  const project: IntroduceProjectData = await response.json();
+        if (!response.ok) {
+          throw new Error("프로젝트가 없습니다.");
+        }
+
+        const data = await response.json();
+
+        setProject(data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchProject();
+  }, [id]);
 
   if (!project) {
-    notFound();
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen gap-4 text-lg text-gray-600 dark:text-gray-300">
+        <Loader2 className="w-10 h-10 animate-spin" />
+        <p>불러오는 중입니다...</p>
+      </div>
+    );
   }
-
   return (
     <div className="flex flex-col items-center mt-12 mb-16 px-4">
       {/* ✅ 프로젝트 제목 */}

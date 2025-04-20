@@ -46,7 +46,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="mb-16">
-      <h2 className="text-3xl font-bold mb-6 text-center">연락처</h2>
+      <h2 className="text-3xl font-bold mb-6 text-left">연락처</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* 이메일 폼 */}
         <form onSubmit={handleSubmit} className="space-y-4">

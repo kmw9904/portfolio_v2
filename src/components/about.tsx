@@ -19,7 +19,7 @@ export default function About() {
           <h3 className="text-xl font-semibold mb-4">🎫 자격증</h3>
           <ul className="text-gray-800 dark:text-gray-300 leading-relaxed">
             <li>🛠️ 2025 정보처리기사 2월 필기 합격 / 실기 준비 중</li>
-            <li>🛠️ 2025 Sqld 준비중</li>
+            <li>🛠️ 2025 Sqld</li>
           </ul>
         </article>
       </div>
