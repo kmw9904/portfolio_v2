@@ -1,3 +1,4 @@
+// src/components/skills/skills.tsx
 import {
   faReact,
   faVuejs,
@@ -19,96 +20,51 @@ import Skill from "./skill";
 import { SkillData } from "@/types";
 
 export default function Skills() {
-  let id = 0;
   const skills: SkillData[] = [
+    { id: "python", skill: "Python", icon: faPython, color: "text-blue-400" },
+    { id: "css3", skill: "CSS3", icon: faCss3, color: "text-blue-600" },
     {
-      id: id++,
-      skill: "Python",
-      icon: faPython,
-      color: "text-blue-400",
-    },
-    {
-      id: id++,
-      skill: "CSS3",
-      icon: faCss3,
-      color: "text-blue-600",
-    },
-    {
-      id: id++,
+      id: "javascript",
       skill: "JavaScript",
       icon: faJs,
       color: "text-yellow-500",
     },
+    { id: "react", skill: "React", icon: faReact, color: "text-sky-500" },
+    { id: "vue", skill: "Vue", icon: faVuejs, color: "text-green-500" },
     {
-      id: id++,
-      skill: "React",
-      icon: faReact,
-      color: "text-sky-500",
-    },
-    {
-      id: id++,
-      skill: "Vue",
-      icon: faVuejs,
-      color: "text-green-500",
-    },
-    {
-      id: id++,
+      id: "typescript",
       skill: "TypeScript",
       icon: faT,
       color: "text-blue-500",
     },
+    { id: "next", skill: "Next.js", icon: faN, color: "text-black" },
+    { id: "django", skill: "Django", icon: faD, color: "text-green-800" },
+    { id: "node", skill: "Node.js", icon: faNode, color: "text-green-400" },
     {
-      id: id++,
-      skill: "Next",
-      icon: faN,
-      color: "text-black-500",
-    },
-    {
-      id: id++,
-      skill: "Django",
-      icon: faD,
-      color: "text-green-800",
-    },
-    {
-      id: id++,
-      skill: "Node",
-      icon: faNode,
-      color: "text-green-400",
-    },
-    {
-      id: id++,
-      skill: "TailwindCss",
+      id: "tailwind",
+      skill: "Tailwind CSS",
       icon: faBacon,
       color: "text-sky-300",
     },
     {
-      id: id++,
-      skill: "BootStrap",
+      id: "bootstrap",
+      skill: "Bootstrap",
       icon: faBootstrap,
       color: "text-purple-500",
     },
+    { id: "vercel", skill: "Vercel", icon: faServer, color: "text-black" },
     {
-      id: id++,
-      skill: "Vercel",
-      icon: faServer,
-      color: "text-black-500",
-    },
-    {
-      id: id++,
+      id: "superbase",
       skill: "Superbase",
       icon: faServer,
       color: "text-emerald-800",
     },
-    {
-      id: id++,
-      skill: "Github",
-      icon: faGithub,
-      color: "text-orange-500",
-    },
+    { id: "github", skill: "GitHub", icon: faGithub, color: "text-orange-500" },
   ];
+
   return (
     <section id="skills" className="mb-16">
-      <h2 className="text-3xl font-bold mb-6 ">기술</h2>
+      <h2 className="text-3xl font-bold mb-6">기술</h2>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {skills.map((s) => (
           <Skill key={s.id} {...s} />

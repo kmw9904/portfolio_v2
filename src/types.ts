@@ -24,8 +24,8 @@ export interface IntroduceProjectData {
 }
 
 export interface SkillData {
-  id: number;
-  skill: string;
+  id: string; // ← 숫자가 아닌 slug(예: "react", "tailwind")
+  skill: string; // 사용자에게 보여줄 이름
   icon: IconDefinition;
   color: string;
 }

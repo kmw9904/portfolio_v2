@@ -18,9 +18,16 @@ const config: Config = {
           "0%": { opacity: 0, transform: "scale(0.95)" },
           "100%": { opacity: 1, transform: "scale(1)" },
         },
+        "fade-in-out": {
+          "0%": { opacity: "0", transform: "scale(0.95)" },
+          "10%": { opacity: "1", transform: "scale(1)" },
+          "90%": { opacity: "1", transform: "scale(1)" },
+          "100%": { opacity: "0", transform: "scale(0.95)" },
+        },
       },
       animation: {
         "fade-scale-in": "fade-scale-in 0.25s ease-out",
+        "fade-in-out": "fade-in-out 3s ease-in-out",
       },
     },
   },
