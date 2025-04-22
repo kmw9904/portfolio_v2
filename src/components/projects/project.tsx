@@ -29,13 +29,13 @@ export default function Project({
               fill
               alt={title}
               priority
-              className="object-cover rounded-xl"
+              className="object-contain rounded-xl"
             />
           </Link>
         </div>
       </div>
       <div className="p-4">
-        <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-100">
+        <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-100 line-clamp-2">
           {title}
         </h3>
         <div className="flex flex-wrap gap-2 mb-4 mx-auto">

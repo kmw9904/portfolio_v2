@@ -26,7 +26,7 @@ export default function Modal({ children }: { children: ReactNode }) {
         }
       }}
       ref={dialogRef}
-      className="w-full max-w-m sm:max-w-3xl max-h-[90vh] 
+      className="w-[90%] max-w-m sm:max-w-3xl max-h-[80vh] 
            rounded-xl backdrop:bg-black/50 bg-white dark:bg-gray-900 
            p-4 sm:p-6 shadow-lg animate-fade-in overflow-auto animate-fade-scale-in 
            top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"

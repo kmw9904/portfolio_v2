@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { certData } from "@/data/certData";
 import { notFound } from "next/navigation";
+import { Loader2 } from "lucide-react";
 
 export default async function Page({
   params,
@@ -10,7 +11,14 @@ export default async function Page({
   const { id } = await params;
   const data = certData[id];
 
-  if (!data) return notFound();
+  if (!data) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen gap-4 text-lg text-gray-600 dark:text-gray-300">
+        <Loader2 className="w-10 h-10 animate-spin" />
+        <p>불러오는 중입니다...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-xl mx-auto py-16 px-6">
