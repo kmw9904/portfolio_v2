@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 김명원 포트폴리오 v2
 
-## Getting Started
+개인 포트폴리오 웹사이트 프로젝트입니다. Next.js를 기반으로 구축되었으며, 저의 기술 스택, 프로젝트 경험, 그리고 연락처 정보를 효과적으로 보여주기 위해 설계되었습니다.
 
-First, run the development server:
+## 🛠️ 기술 스택
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+이 프로젝트는 다음과 같은 기술 스택을 활용하여 개발되었습니다:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **프레임워크**: Next.js 15 (React 기반)
+- **스타일링**: Tailwind CSS
+- **아이콘**: Font Awesome, Lucide React
+- **상태 관리/유틸리티**: `clsx`, `next-themes`
+- **이메일 전송**: EmailJS
+- **마크다운 렌더링**: React Markdown
+- **슬라이더**: Swiper.js
+- **언어**: TypeScript
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 프로젝트 소개
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+이 포트폴리오 웹사이트는 저의 개발 역량과 경험을 효과적으로 전달하기 위해 제작되었습니다. 사용자 친화적인 인터페이스와 반응형 디자인을 통해 다양한 디바이스에서 최적의 경험을 제공합니다. 주요 섹션으로는 저에 대한 소개, 기술 스택, 참여했던 프로젝트, 그리고 연락처 정보가 포함되어 있습니다.
 
-## Learn More
+### 프로젝트 구조
 
-To learn more about Next.js, take a look at the following resources:
+프로젝트는 Next.js의 App Router를 활용하여 다음과 같은 구조로 구성되어 있습니다:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `app/(main)`: 메인 페이지 및 주요 섹션 (소개, 기술, 프로젝트, 연락처)을 포함합니다.
+- `app/(main)/@modal`: 모달 형태로 표시되는 상세 페이지 (About, Project, Skills)를 처리합니다.
+- `app/(sns)`: 소셜 미디어 관련 페이지를 포함합니다.
+- `components`: 재사용 가능한 UI 컴포넌트들을 모아두었습니다.
+- `data`: 포트폴리오에 사용되는 정적 데이터 (예: 자격증, 기술 상세 정보)를 관리합니다.
+- `mock`: 프로젝트 데이터의 목업 데이터를 포함합니다.
+- `public`: 정적 자산 (이미지, 파비콘 등)을 저장합니다.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ✨ 주요 기능
 
-## Deploy on Vercel
+- **반응형 디자인**: 다양한 화면 크기에서 최적화된 사용자 경험을 제공합니다.
+- **다크 모드 지원**: 사용자의 선호에 따라 다크 모드를 전환할 수 있습니다.
+- **모달 기반 상세 정보**: 프로젝트 및 기술 스택의 상세 정보를 모달 형태로 제공하여 사용자 경험을 향상시킵니다.
+- **동적 라우팅**: Next.js의 동적 라우팅을 활용하여 각 프로젝트 및 기술 상세 페이지를 효율적으로 관리합니다.
+- **이메일 문의**: EmailJS를 통해 방문자가 직접 이메일로 문의할 수 있는 기능을 제공합니다.
+- **마크다운 지원**: 프로젝트 설명 등에 마크다운을 사용하여 내용을 풍부하게 표현합니다.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Mock 데이터 활용의 장점
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+이 프로젝트에서는 `mock` 데이터를 활용하여 개발 효율성을 높였습니다. `mock` 데이터를 사용함으로써 다음과 같은 장점을 얻을 수 있습니다:
+
+- **프론트엔드 개발 독립성**: 백엔드 API 개발이 완료되지 않아도 프론트엔드 개발을 독립적으로 진행할 수 있습니다. 이는 개발 초기 단계에서 백엔드 의존성 없이 UI/UX 구현에 집중할 수 있게 합니다.
+- **빠른 프로토타이핑 및 테스트**: 실제 API 호출 없이도 데이터를 즉시 사용할 수 있어 기능 구현 및 테스트 시간을 단축시킵니다. 다양한 시나리오에 대한 데이터를 쉽게 생성하고 테스트할 수 있습니다.
+- **안정적인 개발 환경**: 실제 API 서버의 불안정성이나 네트워크 문제로부터 자유로운 개발 환경을 제공합니다. 이는 개발 중 발생할 수 있는 외부 요인으로 인한 방해를 최소화합니다.
+- **비용 절감**: 실제 API 호출에 필요한 서버 자원이나 네트워크 비용을 절감할 수 있습니다.
+- **API 변경에 대한 유연성**: 백엔드 API의 변경이 발생하더라도 `mock` 데이터만 수정하면 되므로, 프론트엔드 코드의 대대적인 수정 없이 유연하게 대응할 수 있습니다.
+
+## 🌟 프로젝트의 특징 및 강점
+
+이 포트폴리오 프로젝트는 단순히 정보를 나열하는 것을 넘어, 방문자에게 몰입감 있고 효율적인 경험을 제공하기 위해 여러 특징과 강점을 가지고 있습니다.
+
+### 1. 모듈화된 컴포넌트 기반 개발
+
+`components` 디렉토리에 재사용 가능한 UI 컴포넌트들을 분리하여 관리함으로써, 코드의 재사용성을 높이고 유지보수를 용이하게 했습니다. 이는 각 컴포넌트가 독립적으로 기능하고 시각적인 일관성을 유지하는 데 기여합니다. 예를 들어, `projects` 폴더 내의 `project.tsx`와 `projects.tsx`는 개별 프로젝트 아이템과 프로젝트 목록을 효율적으로 관리하고 렌더링합니다.
+
+### 2. Next.js의 App Router 및 동적 라우팅 활용
+
+Next.js 15의 최신 App Router를 적극적으로 활용하여 페이지 라우팅 및 데이터 페칭을 최적화했습니다. 특히, `app/(main)/@modal` 폴더를 통해 모달 형태의 상세 페이지를 구현한 것은 사용자 경험을 해치지 않으면서도 콘텐츠의 깊이를 더하는 독창적인 접근 방식입니다. 이는 페이지 전환 없이 상세 정보를 제공하여 사용자의 흐름을 방해하지 않는 강점을 가집니다. 또한, `[id]` 형태의 동적 라우팅을 통해 각 프로젝트 및 기술 스택에 대한 상세 페이지를 유연하게 관리합니다.
+
+### 3. 타입스크립트를 통한 견고한 개발
+
+프로젝트 전반에 걸쳐 TypeScript를 적용하여 코드의 안정성과 가독성을 높였습니다. `types.ts` 파일에서 정의된 인터페이스와 `data` 폴더의 타입스크립트 기반 데이터 파일들은 개발 과정에서 발생할 수 있는 잠재적인 오류를 줄이고, 협업 시 코드 이해도를 향상시키는 데 크게 기여합니다.
+
+### 4. 직관적인 UI/UX 및 반응형 디자인
+
+Tailwind CSS를 활용하여 빠르고 효율적인 스타일링을 구현했으며, 모든 페이지와 컴포넌트가 다양한 디바이스(데스크톱, 태블릿, 모바일)에서 최적의 레이아웃과 사용자 경험을 제공하도록 반응형으로 설계되었습니다. `globals.css`에서 정의된 전역 스타일과 `layout.tsx`에서 설정된 `scroll-smooth` 클래스는 부드러운 스크롤 경험을 제공하여 사용자 편의성을 높입니다.
+
+### 5. Mock 데이터를 활용한 개발 효율성 극대화
+
+`mock` 데이터를 적극적으로 활용하여 백엔드 개발 의존성을 최소화하고 프론트엔드 개발 속도를 가속화했습니다. 이는 실제 API가 준비되지 않은 상황에서도 UI/UX 개발 및 테스트를 독립적으로 진행할 수 있게 하여, 프로젝트의 전반적인 개발 기간을 단축하고 안정적인 개발 환경을 구축하는 데 중요한 역할을 했습니다.
+
+### 6. 사용자 소통 채널 강화 (EmailJS)
+
+`contact.tsx` 컴포넌트와 EmailJS 연동을 통해 방문자가 포트폴리오 웹사이트를 통해 직접 이메일 문의를 보낼 수 있도록 구현했습니다. 이는 단순한 정보 제공을 넘어, 방문자와의 적극적인 소통을 가능하게 하여 잠재적인 협업 기회를 확대하는 강점을 가집니다.
+
+## 💡 나만의 아이디어 및 고민
+
+이 프로젝트를 개발하면서 다음과 같은 아이디어와 고민을 통해 차별점을 두었습니다:
+
+- **'모달 라우팅'을 통한 사용자 경험 개선**: Next.js의 병렬 라우팅(`@modal`) 기능을 활용하여, 상세 페이지를 모달 형태로 띄워 사용자가 현재 보고 있던 페이지의 맥락을 잃지 않도록 했습니다. 이는 일반적인 페이지 전환 방식보다 훨씬 부드럽고 직관적인 사용자 경험을 제공하며, 포트폴리오 콘텐츠 탐색의 효율성을 높입니다.
+- **'데이터 중심'의 유연한 콘텐츠 관리**: `data` 폴더에 자격증, 기술 상세 정보 등을 별도의 파일로 관리하고, `mock` 폴더에 프로젝트 데이터를 JSON 형태로 분리함으로써, 콘텐츠 업데이트 및 확장이 용이하도록 설계했습니다. 이는 향후 포트폴리오 내용이 변경되거나 추가될 때 코드 수정 없이 데이터 파일만 업데이트하면 되도록 하여 유지보수 편의성을 극대화합니다.
+- **'Next.js 15'의 최신 기능 적극 도입**: 최신 버전의 Next.js 기능을 학습하고 실제 프로젝트에 적용함으로써, 최신 웹 기술 트렌드에 대한 이해와 활용 능력을 보여주고자 했습니다. 특히 App Router의 복잡한 라우팅 구조를 이해하고 구현한 경험은 저의 기술적 깊이를 나타냅니다.
+- **'다크 모드' 구현을 통한 사용자 선택권 확대**: `next-themes` 라이브러리를 활용하여 다크 모드를 손쉽게 전환할 수 있도록 구현했습니다. 이는 사용자의 시각적 선호도를 존중하고, 장시간 웹사이트 이용 시 눈의 피로도를 줄여주는 등 사용자 편의성을 고려한 디자인 결정입니다.
+
+이러한 특징과 강점, 그리고 개발 과정에서의 고민들은 이 포트폴리오 프로젝트가 단순한 웹사이트를 넘어 저의 기술 역량과 문제 해결 능력을 효과적으로 보여주는 결과물임을 증명합니다.
