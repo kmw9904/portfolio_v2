@@ -1,75 +1,41 @@
-// src/components/skills/skills.tsx
-import {
-  faReact,
-  faVuejs,
-  faJs,
-  faCss3,
-  faPython,
-  faBootstrap,
-  faNode,
-  faGithub,
-} from "@fortawesome/free-brands-svg-icons";
-import {
-  faT,
-  faN,
-  faD,
-  faBacon,
-  faServer,
-} from "@fortawesome/free-solid-svg-icons";
-import Skill from "./skill";
-import { SkillData } from "@/types";
+const skillGroups = [
+  {
+    title: "웹퍼블리싱",
+    skills: ["HTML5", "CSS", "반응형 레이아웃", "시맨틱 마크업", "웹 접근성 점검"],
+  },
+  {
+    title: "프론트엔드",
+    skills: ["JavaScript", "TypeScript", "React", "Vue", "Next.js", "상태 처리"],
+  },
+  {
+    title: "연동과 데이터",
+    skills: ["REST API", "PostgreSQL", "MySQL", "Django", "Spring Boot API"],
+  },
+  {
+    title: "검증과 운영",
+    skills: ["Git", "브라우저 개발자 도구", "Lighthouse", "오류 흐름 점검", "배포 로그 확인"],
+  },
+];
 
 export default function Skills() {
-  const skills: SkillData[] = [
-    { id: "python", skill: "Python", icon: faPython, color: "text-blue-400" },
-    { id: "css3", skill: "CSS3", icon: faCss3, color: "text-blue-600" },
-    {
-      id: "javascript",
-      skill: "JavaScript",
-      icon: faJs,
-      color: "text-yellow-500",
-    },
-    { id: "react", skill: "React", icon: faReact, color: "text-sky-500" },
-    { id: "vue", skill: "Vue", icon: faVuejs, color: "text-green-500" },
-    {
-      id: "typescript",
-      skill: "TypeScript",
-      icon: faT,
-      color: "text-blue-500",
-    },
-    { id: "next", skill: "Next.js", icon: faN, color: "text-black" },
-    { id: "django", skill: "Django", icon: faD, color: "text-green-800" },
-    { id: "node", skill: "Node.js", icon: faNode, color: "text-green-400" },
-    {
-      id: "tailwind",
-      skill: "Tailwind CSS",
-      icon: faBacon,
-      color: "text-sky-300",
-    },
-    {
-      id: "bootstrap",
-      skill: "Bootstrap",
-      icon: faBootstrap,
-      color: "text-purple-500",
-    },
-    { id: "vercel", skill: "Vercel", icon: faServer, color: "text-black" },
-    {
-      id: "superbase",
-      skill: "Superbase",
-      icon: faServer,
-      color: "text-emerald-800",
-    },
-    { id: "github", skill: "GitHub", icon: faGithub, color: "text-orange-500" },
-  ];
-
   return (
-    <section id="skills" className="mb-16">
-      <h2 className="text-3xl font-bold mb-6">기술</h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-        {skills.map((s) => (
-          <Skill key={s.id} {...s} />
+    <section id="skills" className="section-block" aria-labelledby="skills-title">
+      <div className="section-heading">
+        <p className="eyebrow">Capabilities</p>
+        <h2 id="skills-title">사용 기술과 확인 기준</h2>
+      </div>
+      <div className="skills-table">
+        {skillGroups.map((group) => (
+          <article key={group.title}>
+            <h3>{group.title}</h3>
+            <p>{group.skills.join(" · ")}</p>
+          </article>
         ))}
       </div>
+      <p className="skills-note">
+        PHP와 jQuery는 아래 기업 홈페이지 시연물에 적용했습니다. 그누보드는 별도
+        실행 검증 전이므로 사용 기술에 포함하지 않았습니다.
+      </p>
     </section>
   );
 }

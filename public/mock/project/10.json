@@ -1,0 +1,18 @@
+{
+  "id": 10,
+  "title": "PHP 기업 홈페이지 시연",
+  "skills": ["HTML5", "CSS", "PHP", "jQuery", "Docker"],
+  "github": "https://github.com/kmw9904/portfolio_v2/tree/main/demos/company-site",
+  "live": "/demos/company-site/index.html",
+  "subtitle": [
+    "퍼블리싱과 데이터 출력",
+    "접근성",
+    "검색 노출과 실행"
+  ],
+  "about": [
+    ["서비스와 프로젝트 항목을 PHP 배열로 분리하고 반복 출력해 문구 수정 지점을 줄였습니다.", "jQuery로 모바일 메뉴, FAQ, 문의 폼 검증을 연결했습니다."],
+    ["본문 바로가기, 키보드 포커스, 폼 label, aria-expanded, aria-live와 동작 축소 설정을 적용했습니다."],
+    ["페이지 제목과 설명, canonical, Open Graph, robots 메타데이터를 넣었습니다.", "Docker의 PHP 8.2 Apache 환경에서 렌더링 결과를 확인했습니다. 그누보드는 포함하지 않았습니다."]
+  ],
+  "introduce": "기업 홈페이지 구축과 유지보수 업무를 가정해 만든 시연물입니다. 화려한 효과보다 콘텐츠 구조, 모바일 화면, 키보드 조작과 수정하기 쉬운 데이터 구성을 우선했습니다."
+}

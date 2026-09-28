@@ -1,49 +1,37 @@
-"use client";
+const credentials = [
+  "정보처리기사",
+  "SQLD",
+  "OPIc IH",
+  "소프트웨어 개발 집중교육 1학기 800시간 이수",
+];
 
-import { useRouter } from "next/navigation";
-import { certList } from "@/data/certData";
+const workingRules = [
+  "화면과 API가 만나는 요청·응답 규격을 먼저 맞춥니다.",
+  "정상 화면과 함께 빈 데이터와 오류 흐름을 확인합니다.",
+  "배포가 끝난 뒤 로그와 실제 데이터로 동작을 다시 봅니다.",
+];
 
 export default function AboutPage() {
-  const router = useRouter();
-
   return (
-    <section id="about" className="mb-16 px-4">
-      <h2 className="text-3xl font-bold mb-6 text-center">소개</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* 🎓 교육 및 활동 */}
-        <article className="bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-6 hover:scale-[1.02] transition-transform duration-300">
-          <h3 className="text-xl font-semibold mb-4">🎓 교육 및 활동</h3>
-          <ul className="space-y-2 text-gray-800 dark:text-gray-300 text-sm md:text-base">
-            {certList.slice(0, 7).map((item) => (
-              <li key={item.id}>
-                <button
-                  onClick={() =>
-                    router.push(`/about/${item.id}`, { scroll: false })
-                  }
-                  className="block w-full text-left font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-600 transition-colors duration-200 break-keep cursor-pointer"
-                >
-                  {item.label}
-                </button>
-              </li>
+    <section id="about" className="section-block" aria-labelledby="about-title">
+      <div className="section-heading">
+        <p className="eyebrow">Profile</p>
+        <h2 id="about-title">기본 정보</h2>
+      </div>
+      <div className="profile-grid">
+        <article>
+          <h3>교육과 자격</h3>
+          <ul className="plain-list">
+            {credentials.map((credential) => (
+              <li key={credential}>{credential}</li>
             ))}
           </ul>
         </article>
-
-        {/* 🎫 자격증 */}
-        <article className="bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-6 hover:scale-[1.02] transition-transform duration-300">
-          <h3 className="text-xl font-semibold mb-4">🎫 자격증</h3>
-          <ul className="space-y-2 text-gray-800 dark:text-gray-300 text-sm md:text-base">
-            {certList.slice(7).map((item) => (
-              <li key={item.id}>
-                <button
-                  onClick={() =>
-                    router.push(`/about/${item.id}`, { scroll: false })
-                  }
-                  className="block w-full text-left font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-600 transition-colors duration-200 break-keep cursor-pointer"
-                >
-                  {item.label}
-                </button>
-              </li>
+        <article>
+          <h3>작업 기준</h3>
+          <ul className="plain-list">
+            {workingRules.map((rule) => (
+              <li key={rule}>{rule}</li>
             ))}
           </ul>
         </article>

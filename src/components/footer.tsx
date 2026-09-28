@@ -1,8 +1,9 @@
 export default function Footer() {
   return (
-    <footer className="bg-gray-100 dark:bg-gray-800 py-6">
-      <div className="container max-x-4xl mx-auto px-6 text-center">
-        <p>&copy; 2025 김명원. All rights reserved.</p>
+    <footer className="site-footer">
+      <div className="footer-inner">
+        <p>&copy; 2026 김명원</p>
+        <a href="#home">맨 위로</a>
       </div>
     </footer>
   );

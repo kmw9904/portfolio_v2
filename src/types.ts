@@ -2,20 +2,22 @@ import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
 export interface ProjectData {
   id: number;
-  img: string;
   title: string;
   skills: string[];
-  github: string;
+  summary: string;
+  role: string;
+  outcome: string;
+  github?: string;
   live?: string;
-  address?: string;
+  sourceLabel?: string;
 }
 
 export interface IntroduceProjectData {
   id: number;
-  img: string;
+  img?: string;
   title: string;
   skills: string[];
-  github: string;
+  github?: string;
   live?: string;
   address?: string;
   subtitle: string[];
