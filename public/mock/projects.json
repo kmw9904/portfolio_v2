@@ -1,39 +1,29 @@
 [
   {
-    "id": 8,
-    "title": "Boda 반응형 웹",
-    "skills": ["React", "TypeScript", "Vite", "Spring Boot API"],
-    "summary": "결혼 준비의 견적 요청, 업체 제안, 채팅, 일정, 예약과 결제를 하나의 흐름으로 연결한 2인 팀 프로젝트입니다.",
-    "role": "React 웹과 React Native 앱의 화면·상태 처리, API 규격 조율, 통합 시나리오 검증",
-    "outcome": "로그인부터 예약·결제까지 정상, 빈 데이터, 오류 흐름을 나눠 확인했습니다."
-  },
-  {
     "id": 9,
     "title": "ITPE Quiz 학습 서비스",
-    "skills": ["Next.js", "TypeScript", "PostgreSQL", "JWT"],
+    "skills": ["React Native", "Next.js", "TypeScript", "PostgreSQL", "JWT"],
     "summary": "오답과 학습 기록을 여러 기기에서 이어 볼 수 있도록 모바일 화면과 백엔드를 함께 구축한 개인 프로젝트입니다.",
     "role": "문제 데이터 구조, 인증, 기록 이전·동기화, 오류 신고 화면과 API 개발",
     "outcome": "가입 시 로컬 기록을 한 번만 이전하고 중복 이관을 차단하는 규칙을 구현했습니다.",
     "github": "https://github.com/kmw9904/itpe-quiz"
   },
   {
+    "id": 8,
+    "title": "Boda 견적·예약 통합 플랫폼",
+    "skills": ["React Native", "React", "TypeScript", "Spring Boot", "MySQL"],
+    "summary": "견적 요청부터 업체 제안, 채팅, 일정, 예약과 결제까지 여러 업무 단계를 하나의 흐름으로 연결한 2인 팀 프로젝트입니다.",
+    "role": "클라이언트 개발 중심, Spring Boot API 일부 수정, 요청·응답 규격 조율과 통합시험",
+    "outcome": "로그인부터 예약·결제까지 정상, 빈 데이터와 오류 흐름을 나눠 검증했습니다."
+  },
+  {
     "id": 1,
+    "img": "/project1.png",
     "title": "금융상품 비교 웹서비스",
     "skills": ["Vue", "JavaScript", "CSS", "Django REST API"],
     "summary": "공개 금융상품 데이터를 조건별로 조회하고 월 상환액을 계산해 비교하는 2인 팀 웹서비스입니다.",
     "role": "프론트엔드 화면·상태 처리, API 연동, 요청·응답 규격 조율과 통합 점검",
     "outcome": "회원가입, 상품 조회, 월 상환액 계산과 정렬이 이어지는 핵심 흐름을 완성했습니다.",
     "github": "https://github.com/kmw9904/projects"
-  },
-  {
-    "id": 10,
-    "title": "PHP 기업 홈페이지 시연",
-    "skills": ["HTML5", "CSS", "PHP", "jQuery"],
-    "summary": "기업 홈페이지 유지보수 업무를 가정해 공통 데이터, 반응형 메뉴, 서비스 목록과 문의 폼을 구현한 시연물입니다.",
-    "role": "시맨틱 마크업, 반응형 CSS, PHP 데이터 출력, jQuery 메뉴·폼 상호작용",
-    "outcome": "키보드 포커스, 본문 바로가기, 동작 축소 설정과 기본 SEO 메타데이터를 코드에 반영했습니다.",
-    "github": "https://github.com/kmw9904/portfolio_v2/tree/main/demos/company-site",
-    "live": "/demos/company-site/index.html",
-    "sourceLabel": "소스 보기"
   }
 ]

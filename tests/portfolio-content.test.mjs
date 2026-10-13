@@ -7,11 +7,13 @@ const root = process.cwd();
 const read = (relativePath) =>
   fs.readFileSync(path.join(root, relativePath), "utf8");
 
-test("hero copy is tailored to web publishing work", () => {
+test("hero copy is tailored to reliable application development", () => {
   const hero = read("src/components/introduce.tsx");
-  assert.match(hero, /디자인을 반응형 웹으로 구현하고/);
+  assert.match(hero, /업무를 코드로 옮기고/);
+  assert.match(hero, /데이터 정확성/);
   assert.doesNotMatch(hero, /성장을 멈추지 않는 개발자/);
   assert.doesNotMatch(hero, /profile\.jpg/);
+  assert.match(hero, /hero-visual/);
 });
 
 test("main page provides a skip link and semantic portfolio sections", () => {
@@ -21,23 +23,41 @@ test("main page provides a skip link and semantic portfolio sections", () => {
   assert.match(page, /Experience/);
 });
 
-test("metadata describes a frontend and web publishing portfolio", () => {
+test("Dubu experience shows verified RAG and curriculum index work", () => {
+  const experience = read("src/components/experience.tsx");
+  assert.match(experience, /상담 AI/);
+  assert.match(experience, /56\.3%/);
+  assert.match(experience, /78\.2%/);
+  assert.match(experience, /2,381/);
+  assert.match(experience, /1,615/);
+  assert.match(experience, /587/);
+});
+
+test("visual system uses a soft blue card-based layout", () => {
+  const css = read("src/app/(main)/globals.css").toLowerCase();
+  assert.match(css, /#3182f6/);
+  assert.match(css, /#f2f4f6/);
+  assert.match(css, /\.case-study-grid/);
+  assert.match(css, /border-radius: 28px/);
+});
+
+test("metadata describes an application development portfolio", () => {
   const layout = read("src/app/(main)/layout.tsx");
-  assert.match(layout, /웹퍼블리싱/);
+  assert.match(layout, /응용 소프트웨어 개발/);
   assert.match(layout, /openGraph/);
   assert.match(layout, /robots/);
 });
 
 test("featured projects are concise and role-relevant", () => {
   const projects = JSON.parse(read("public/mock/projects.json"));
-  assert.equal(projects.length, 4);
+  assert.equal(projects.length, 3);
   assert.deepEqual(
     projects.map((project) => project.id),
-    [8, 9, 1, 10]
+    [9, 8, 1]
   );
-  assert.equal(projects[0].title, "Boda 반응형 웹");
-  assert.equal(projects[1].title, "ITPE Quiz 학습 서비스");
-  assert.equal(projects[3].title, "PHP 기업 홈페이지 시연");
+  assert.equal(projects[0].title, "ITPE Quiz 학습 서비스");
+  assert.equal(projects[1].title, "Boda 견적·예약 통합 플랫폼");
+  assert.equal(projects[2].title, "금융상품 비교 웹서비스");
 });
 
 test("portfolio no longer claims stale certifications or misspelled skills", () => {

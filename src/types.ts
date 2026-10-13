@@ -2,6 +2,7 @@ import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
 export interface ProjectData {
   id: number;
+  img?: string;
   title: string;
   skills: string[];
   summary: string;

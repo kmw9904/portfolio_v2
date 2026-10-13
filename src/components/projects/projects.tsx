@@ -6,18 +6,18 @@ export default function Projects() {
   const projects = projectData as ProjectData[];
 
   return (
-    <section id="projects" className="section-block" aria-labelledby="projects-title">
-      <div className="section-heading section-heading-wide">
+    <section id="projects" className="section-block projects-section" aria-labelledby="projects-title">
+      <div className="section-heading section-heading-split">
         <div>
-          <p className="eyebrow">Selected work</p>
-          <h2 id="projects-title">대표 프로젝트</h2>
+          <p className="eyebrow">Selected projects</p>
+          <h2 id="projects-title">화면과 데이터가 함께 움직이는 서비스</h2>
         </div>
-        <p>
-          화면 구현만 나열하지 않고 맡은 범위와 문제를 고친 기준을 함께
-          기록했습니다.
+        <p className="section-description">
+          인증과 기록, 예약과 결제, 조건별 조회처럼 여러 단계가 이어지는 기능을
+          구현했습니다. 맡은 범위와 확인한 결과는 구분해 적었습니다.
         </p>
       </div>
-      <div className="project-list">
+      <div className="project-grid">
         {projects.map((project, index) => (
           <Project key={project.id} {...project} index={index + 1} />
         ))}

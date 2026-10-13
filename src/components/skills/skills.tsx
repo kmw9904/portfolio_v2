@@ -1,19 +1,19 @@
 const skillGroups = [
   {
-    title: "웹퍼블리싱",
-    skills: ["HTML5", "CSS", "반응형 레이아웃", "시맨틱 마크업", "웹 접근성 점검"],
+    title: "응용 소프트웨어",
+    skills: ["Python", "JavaScript", "TypeScript", "React", "Vue", "Next.js"],
   },
   {
-    title: "프론트엔드",
-    skills: ["JavaScript", "TypeScript", "React", "Vue", "Next.js", "상태 처리"],
+    title: "API와 데이터베이스",
+    skills: ["REST API", "Django", "Spring Boot API", "PostgreSQL", "MySQL", "DynamoDB", "SQL"],
   },
   {
-    title: "연동과 데이터",
-    skills: ["REST API", "PostgreSQL", "MySQL", "Django", "Spring Boot API"],
+    title: "품질과 신뢰성",
+    skills: ["요구사항 정리", "데이터 정합성 검증", "통합 시나리오 시험", "로그 분석", "장애 원인 분석", "복구 확인"],
   },
   {
-    title: "검증과 운영",
-    skills: ["Git", "브라우저 개발자 도구", "Lighthouse", "오류 흐름 점검", "배포 로그 확인"],
+    title: "협업과 운영",
+    skills: ["Git", "GitHub", "API 규격 조율", "AWS", "배포", "롤백", "운영 데이터 점검"],
   },
 ];
 
@@ -33,8 +33,8 @@ export default function Skills() {
         ))}
       </div>
       <p className="skills-note">
-        PHP와 jQuery는 아래 기업 홈페이지 시연물에 적용했습니다. 그누보드는 별도
-        실행 검증 전이므로 사용 기술에 포함하지 않았습니다.
+        Spring Boot는 팀 프로젝트에서 API 연동과 일부 백엔드 수정에 사용했습니다.
+        백엔드 전체를 단독 구축한 것으로 표시하지 않았습니다.
       </p>
     </section>
   );
