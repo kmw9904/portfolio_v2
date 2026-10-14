@@ -7,81 +7,86 @@ const root = process.cwd();
 const read = (relativePath) =>
   fs.readFileSync(path.join(root, relativePath), "utf8");
 
-test("hero copy is tailored to reliable application development", () => {
-  const hero = read("src/components/introduce.tsx");
-  assert.match(hero, /업무를 코드로 옮기고/);
-  assert.match(hero, /데이터 정확성/);
-  assert.doesNotMatch(hero, /성장을 멈추지 않는 개발자/);
-  assert.doesNotMatch(hero, /profile\.jpg/);
-  assert.match(hero, /hero-visual/);
-});
-
-test("main page provides a skip link and semantic portfolio sections", () => {
+test("original dark portfolio structure is preserved", () => {
   const page = read("src/app/(main)/page.tsx");
-  assert.match(page, /본문 바로가기/);
-  assert.match(page, /id="main-content"/);
-  assert.match(page, /Experience/);
+  const layout = read("src/app/(main)/layout.tsx");
+  const introduce = read("src/components/introduce.tsx");
+
+  assert.match(page, /<Introduce \/>/);
+  assert.match(page, /<About \/>/);
+  assert.match(page, /<Skills \/>/);
+  assert.match(page, /<Projects \/>/);
+  assert.match(page, /<Contact \/>/);
+  assert.match(layout, /defaultTheme="dark"/);
+  assert.match(introduce, /profile\.jpg/);
 });
 
-test("Dubu experience shows verified RAG and curriculum index work", () => {
-  const experience = read("src/components/experience.tsx");
-  assert.match(experience, /상담 AI/);
-  assert.match(experience, /56\.3%/);
-  assert.match(experience, /78\.2%/);
-  assert.match(experience, /2,381/);
-  assert.match(experience, /1,615/);
-  assert.match(experience, /587/);
+test("hero copy shows the agreed reusable developer identity", () => {
+  const hero = read("src/components/introduce.tsx");
+  assert.match(hero, /웹·API·데이터·운영을 함께 보는/);
+  assert.match(hero, /응용 소프트웨어 개발자/);
+  assert.match(hero, /단국대학교 정치외교학과/);
+  assert.doesNotMatch(hero, /성장을 멈추지 않는 개발자|열심히 성장|최신 JavaScript 프레임워크/);
 });
 
-test("visual system uses a soft blue card-based layout", () => {
-  const css = read("src/app/(main)/globals.css").toLowerCase();
-  assert.match(css, /#3182f6/);
-  assert.match(css, /#f2f4f6/);
-  assert.match(css, /\.case-study-grid/);
-  assert.match(css, /border-radius: 28px/);
+test("education and credentials are current without year labels", () => {
+  const data = read("src/data/certData.ts");
+  assert.match(data, /삼성청년SW아카데미 12기 1학기 코딩집중과정/);
+  assert.match(data, /정보처리기사 취득/);
+  assert.match(data, /SQL 개발자 자격 취득/);
+  assert.doesNotMatch(data, /2022|2023|2024|2025|2026|필기 합격|실기 준비 중|진행 중/);
+});
+
+test("skills reflect verified development and operations work", () => {
+  const skills = read("src/components/skills/skills.tsx");
+  assert.match(skills, /Go/);
+  assert.match(skills, /SQL · PostgreSQL/);
+  assert.match(skills, /DynamoDB/);
+  assert.match(skills, /AWS/);
+  assert.match(skills, /검증과 협업/);
+  assert.doesNotMatch(skills, /Superbase/);
+});
+
+test("five verified projects are featured with role and outcome", () => {
+  const projects = JSON.parse(read("public/mock/projects.json"));
+  assert.equal(projects.length, 5);
+  assert.deepEqual(projects.map((project) => project.id), [11, 12, 9, 8, 1]);
+  for (const project of projects) {
+    assert.ok(project.title);
+    assert.ok(project.summary);
+    assert.ok(project.role);
+    assert.ok(project.outcome);
+    assert.ok(Array.isArray(project.skills) && project.skills.length > 0);
+    assert.ok(fs.existsSync(path.join(root, `public/mock/project/${project.id}.json`)));
+  }
+});
+
+test("project carousel stays manual for readability", () => {
+  const projects = read("src/components/projects/projects.tsx");
+  assert.doesNotMatch(projects, /Autoplay|autoplay=|swiper/);
+  assert.match(projects, /이전 프로젝트/);
+  assert.match(projects, /다음 프로젝트/);
+  assert.match(projects, /setActiveIndex/);
+});
+
+test("footer and visible main content have no stale year labels", () => {
+  const footer = read("src/components/footer.tsx");
+  const visible = [
+    "src/components/header.tsx",
+    "src/components/introduce.tsx",
+    "src/app/(main)/about/page.tsx",
+    "src/components/skills/skills.tsx",
+    "src/components/projects/projects.tsx",
+    "src/components/contact.tsx",
+    "src/components/footer.tsx",
+  ].map(read).join("\n");
+
+  assert.doesNotMatch(footer, /20\d{2}/);
+  assert.doesNotMatch(visible, /20\d{2}|필기 합격|실기 준비 중|내일이 더 빛나는/);
 });
 
 test("metadata describes an application development portfolio", () => {
   const layout = read("src/app/(main)/layout.tsx");
-  assert.match(layout, /응용 소프트웨어 개발/);
+  assert.match(layout, /응용 소프트웨어 개발 포트폴리오/);
   assert.match(layout, /openGraph/);
-  assert.match(layout, /robots/);
-});
-
-test("featured projects are concise and role-relevant", () => {
-  const projects = JSON.parse(read("public/mock/projects.json"));
-  assert.equal(projects.length, 3);
-  assert.deepEqual(
-    projects.map((project) => project.id),
-    [9, 8, 1]
-  );
-  assert.equal(projects[0].title, "ITPE Quiz 학습 서비스");
-  assert.equal(projects[1].title, "Boda 견적·예약 통합 플랫폼");
-  assert.equal(projects[2].title, "금융상품 비교 웹서비스");
-});
-
-test("portfolio no longer claims stale certifications or misspelled skills", () => {
-  const sourceFiles = [
-    "src/components/about.tsx",
-    "src/app/(main)/about/page.tsx",
-    "src/components/skills/skills.tsx",
-  ].map(read);
-  const combined = sourceFiles.join("\n");
-  assert.doesNotMatch(combined, /필기 합격|실기 준비 중|Superbase/);
-  assert.match(combined, /정보처리기사/);
-  assert.match(combined, /SQLD/);
-});
-
-test("PHP publishing demo includes semantic, SEO and accessibility basics", () => {
-  const php = read("demos/company-site/index.php");
-  const css = read("demos/company-site/assets/styles.css");
-  const js = read("demos/company-site/assets/site.js");
-  assert.match(php, /lang="ko"/);
-  assert.match(php, /name="description"/);
-  assert.match(php, /class="skip-link"/);
-  assert.match(php, /<main id="main-content">/);
-  assert.match(php, /jquery/i);
-  assert.match(css, /:focus-visible/);
-  assert.match(css, /prefers-reduced-motion/);
-  assert.match(js, /aria-expanded/);
 });

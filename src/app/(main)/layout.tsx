@@ -11,17 +11,13 @@ config.autoAddCss = false;
 export const metadata: Metadata = {
   title: "김명원 | 응용 소프트웨어 개발 포트폴리오",
   description:
-    "웹과 API, 데이터베이스 구현부터 데이터 정합성 검증과 장애 분석까지 정리한 응용 소프트웨어 개발 포트폴리오입니다.",
+    "웹, API, 데이터베이스 구현과 AI 서비스 운영·검증 경험을 정리한 개발 포트폴리오입니다.",
   openGraph: {
     title: "김명원 | 응용 소프트웨어 개발 포트폴리오",
     description:
-      "업무 규칙을 시스템으로 옮기고 데이터와 운영 결과까지 확인하는 개발자 포트폴리오",
+      "화면 구현부터 데이터 검증과 운영 장애 대응까지 이어가는 개발자 포트폴리오",
     type: "website",
     locale: "ko_KR",
-  },
-  robots: {
-    index: true,
-    follow: true,
   },
 };
 
@@ -34,8 +30,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" suppressHydrationWarning className="scroll-smooth">
-      <body>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+      <body className="dark:bg-gray-900 dark:text-white bg-white text-black min-h-screen transition-colors duration-300">
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <Header />
           {children}
           <Footer />

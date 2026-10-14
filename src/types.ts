@@ -10,7 +10,7 @@ export interface ProjectData {
   outcome: string;
   github?: string;
   live?: string;
-  sourceLabel?: string;
+  address?: string;
 }
 
 export interface IntroduceProjectData {
@@ -31,4 +31,5 @@ export interface SkillData {
   skill: string; // 사용자에게 보여줄 이름
   icon: IconDefinition;
   color: string;
+  detail: string;
 }

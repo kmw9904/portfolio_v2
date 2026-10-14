@@ -1,11 +1,7 @@
 import Modal from "@/components/modal";
 import ProjectPage from "@/app/(main)/project/[id]/page";
 
-type ProjectPageProps = {
-  params: Promise<{ id: string }>;
-};
-
-export default function Page(props: ProjectPageProps) {
+export default function Page(props: any) {
   return (
     <Modal>
       <ProjectPage {...props} />

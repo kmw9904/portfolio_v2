@@ -1,41 +1,48 @@
-const skillGroups = [
-  {
-    title: "응용 소프트웨어",
-    skills: ["Python", "JavaScript", "TypeScript", "React", "Vue", "Next.js"],
-  },
-  {
-    title: "API와 데이터베이스",
-    skills: ["REST API", "Django", "Spring Boot API", "PostgreSQL", "MySQL", "DynamoDB", "SQL"],
-  },
-  {
-    title: "품질과 신뢰성",
-    skills: ["요구사항 정리", "데이터 정합성 검증", "통합 시나리오 시험", "로그 분석", "장애 원인 분석", "복구 확인"],
-  },
-  {
-    title: "협업과 운영",
-    skills: ["Git", "GitHub", "API 규격 조율", "AWS", "배포", "롤백", "운영 데이터 점검"],
-  },
-];
+import {
+  faReact,
+  faVuejs,
+  faJs,
+  faPython,
+  faAws,
+} from "@fortawesome/free-brands-svg-icons";
+import {
+  faCode,
+  faDatabase,
+  faServer,
+  faVial,
+} from "@fortawesome/free-solid-svg-icons";
+import Skill from "./skill";
+import { SkillData } from "@/types";
 
 export default function Skills() {
+  const skills: SkillData[] = [
+    { id: "python", skill: "Python", detail: "알고리즘·데이터 처리", icon: faPython, color: "text-blue-400" },
+    { id: "javascript", skill: "JavaScript", detail: "웹 동작과 API 연동", icon: faJs, color: "text-yellow-500" },
+    { id: "typescript", skill: "TypeScript", detail: "타입 기반 화면·데이터 구조", icon: faCode, color: "text-blue-500" },
+    { id: "react", skill: "React", detail: "컴포넌트와 상태 처리", icon: faReact, color: "text-sky-500" },
+    { id: "vue", skill: "Vue", detail: "금융상품 웹서비스 구현", icon: faVuejs, color: "text-green-500" },
+    { id: "next", skill: "Next.js", detail: "화면·인증·기록 API", icon: faServer, color: "text-gray-700 dark:text-gray-200" },
+    { id: "go", skill: "Go", detail: "운영 자동화와 배치", icon: faCode, color: "text-cyan-500" },
+    { id: "backend", skill: "Django · Spring Boot", detail: "API 연동과 일부 백엔드 수정", icon: faServer, color: "text-emerald-600" },
+    { id: "sql", skill: "SQL · PostgreSQL", detail: "관계형 데이터 설계·검증", icon: faDatabase, color: "text-indigo-500" },
+    { id: "dynamodb", skill: "DynamoDB", detail: "단일 테이블·운영 데이터", icon: faDatabase, color: "text-amber-500" },
+    { id: "aws", skill: "AWS", detail: "ECS·Lambda·로그·복구", icon: faAws, color: "text-orange-500" },
+    { id: "testing", skill: "검증과 협업", detail: "GitHub·통합시험·장애 분석", icon: faVial, color: "text-purple-500" },
+  ];
+
   return (
-    <section id="skills" className="section-block" aria-labelledby="skills-title">
-      <div className="section-heading">
-        <p className="eyebrow">Capabilities</p>
-        <h2 id="skills-title">사용 기술과 확인 기준</h2>
+    <section id="skills" className="mb-16">
+      <div className="mb-6">
+        <h2 className="text-3xl font-bold">기술</h2>
+        <p className="mt-2 text-gray-600 dark:text-gray-400">
+          이름만 나열하지 않고 실제로 적용한 범위를 함께 적었습니다.
+        </p>
       </div>
-      <div className="skills-table">
-        {skillGroups.map((group) => (
-          <article key={group.title}>
-            <h3>{group.title}</h3>
-            <p>{group.skills.join(" · ")}</p>
-          </article>
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {skills.map((skill) => (
+          <Skill key={skill.id} {...skill} />
         ))}
       </div>
-      <p className="skills-note">
-        Spring Boot는 팀 프로젝트에서 API 연동과 일부 백엔드 수정에 사용했습니다.
-        백엔드 전체를 단독 구축한 것으로 표시하지 않았습니다.
-      </p>
     </section>
   );
 }

@@ -1,28 +1,44 @@
 [
   {
+    "id": 11,
+    "title": "고객상담 AI 품질 개선",
+    "skills": ["Go", "RAG", "DynamoDB", "AWS", "SQL"],
+    "summary": "기준 문서와 운영 데이터를 함께 검색하고 담당자의 실제 사용 결과를 다시 품질 개선에 반영한 업무 프로젝트입니다.",
+    "role": "검색·답변 근거 검증, 지식자료 정합성 점검, 채택 데이터 분석",
+    "outcome": "질의응답 356건과 문서 60건을 대조해 검증된 35건을 정정했습니다."
+  },
+  {
+    "id": 12,
+    "title": "수업 커리큘럼 데이터베이스",
+    "skills": ["Python", "SQL", "DynamoDB", "Data Modeling"],
+    "summary": "수업 문의를 담당자의 기억이 아닌 회기와 활동 근거로 찾을 수 있도록 커리큘럼 데이터를 구조화한 업무 프로젝트입니다.",
+    "role": "원본 구조 분석, 단일 테이블 설계, 적재·백업·복구·검증",
+    "outcome": "19개 학습플랜과 587개 회기를 2,381개 항목으로 구성하고 재적재 손실을 복구했습니다."
+  },
+  {
     "id": 9,
     "title": "ITPE Quiz 학습 서비스",
     "skills": ["React Native", "Next.js", "TypeScript", "PostgreSQL", "JWT"],
     "summary": "오답과 학습 기록을 여러 기기에서 이어 볼 수 있도록 모바일 화면과 백엔드를 함께 구축한 개인 프로젝트입니다.",
-    "role": "문제 데이터 구조, 인증, 기록 이전·동기화, 오류 신고 화면과 API 개발",
-    "outcome": "가입 시 로컬 기록을 한 번만 이전하고 중복 이관을 차단하는 규칙을 구현했습니다.",
+    "role": "기획, 데이터 구조, 인증, 기록 이전·동기화, 오류 신고 기능 개발",
+    "outcome": "가입 시 로컬 기록을 한 번만 이전하고 중복 이관을 차단했습니다.",
     "github": "https://github.com/kmw9904/itpe-quiz"
   },
   {
     "id": 8,
     "title": "Boda 견적·예약 통합 플랫폼",
     "skills": ["React Native", "React", "TypeScript", "Spring Boot", "MySQL"],
-    "summary": "견적 요청부터 업체 제안, 채팅, 일정, 예약과 결제까지 여러 업무 단계를 하나의 흐름으로 연결한 2인 팀 프로젝트입니다.",
-    "role": "클라이언트 개발 중심, Spring Boot API 일부 수정, 요청·응답 규격 조율과 통합시험",
-    "outcome": "로그인부터 예약·결제까지 정상, 빈 데이터와 오류 흐름을 나눠 검증했습니다."
+    "summary": "견적 요청부터 업체 제안, 채팅, 일정, 예약과 결제까지 여러 업무 단계를 연결한 2인 팀 프로젝트입니다.",
+    "role": "클라이언트 개발 중심, Spring Boot API 일부 수정, 요청·응답 규격 조율",
+    "outcome": "로그인부터 예약·결제까지 정상, 빈 데이터와 오류 흐름을 나눠 시험했습니다."
   },
   {
     "id": 1,
     "img": "/project1.png",
     "title": "금융상품 비교 웹서비스",
-    "skills": ["Vue", "JavaScript", "CSS", "Django REST API"],
+    "skills": ["Vue", "JavaScript", "Pinia", "Django REST API", "RDBMS"],
     "summary": "공개 금융상품 데이터를 조건별로 조회하고 월 상환액을 계산해 비교하는 2인 팀 웹서비스입니다.",
-    "role": "프론트엔드 화면·상태 처리, API 연동, 요청·응답 규격 조율과 통합 점검",
+    "role": "프론트엔드 중심, API 연동, 데이터 관계 확인과 통합시험",
     "outcome": "회원가입, 상품 조회, 월 상환액 계산과 정렬이 이어지는 핵심 흐름을 완성했습니다.",
     "github": "https://github.com/kmw9904/projects"
   }

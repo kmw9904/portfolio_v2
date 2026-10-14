@@ -47,7 +47,7 @@ export default function Page({ params }: { params: Promise<{ id: string }> }) {
           width={600}
           height={300}
           alt={`${project.title} 대표 화면`}
-          className="object-cover rounded-xl mb-8"
+          className="object-contain rounded-xl mb-8"
         />
       )}
 
@@ -67,7 +67,6 @@ export default function Page({ params }: { params: Promise<{ id: string }> }) {
         ))}
       </div>
 
-
       <div className="flex flex-wrap gap-4 mb-12">
         {project.github && (
           <a
@@ -83,7 +82,6 @@ export default function Page({ params }: { params: Promise<{ id: string }> }) {
           <a
             href={project.live}
             target="_blank"
-            rel="noreferrer"
             className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-500 transition"
           >
             라이브 데모
@@ -93,7 +91,6 @@ export default function Page({ params }: { params: Promise<{ id: string }> }) {
           <a
             href={project.address}
             target="_blank"
-            rel="noreferrer"
             className="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-500 transition"
           >
             링크 이동

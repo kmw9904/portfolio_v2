@@ -1,42 +1,25 @@
-// src/components/skills/skill.tsx
-"use client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
-import { useRouter } from "next/navigation";
-import { skillDetailData } from "@/data/skillDetailData";
 
 export default function Skill({
-  id,
   color,
   icon,
   skill,
+  detail,
 }: {
   id: string;
   color: string;
   icon: IconDefinition;
   skill: string;
+  detail: string;
 }) {
-  const router = useRouter();
-
-  const handleClick = () => {
-    const detail = skillDetailData[id];
-    // blogUrl 또는 notionUrl이 하나도 없으면
-    if (!detail || (!detail.blogUrl && !detail.notionUrl)) {
-      alert("아직 작성중입니다✍ 조금만 기다려주세요🧑"); // ← 알림만 띄우고 리다이렉트 안 함
-      return;
-    }
-    // 있으면 모달 경로로 이동
-    router.push(`/skills/${id}`, { scroll: false });
-  };
-
   return (
-    <button
-      onClick={handleClick}
-      className="flex flex-col items-center bg-gray-100 dark:bg-gray-800 
-                 shadow-md rounded-lg p-4 hover:scale-105 transition-transform duration-300 cursor-pointer"
-    >
-      <FontAwesomeIcon className={`text-4xl ${color}`} icon={icon} />
-      <h3 className="text-lg font-semibold mt-2">{skill}</h3>
-    </button>
+    <article className="flex min-h-36 flex-col items-center justify-center rounded-lg bg-gray-100 p-4 text-center shadow-md transition-transform duration-300 hover:-translate-y-1 dark:bg-gray-800">
+      <FontAwesomeIcon className={`text-3xl ${color}`} icon={icon} />
+      <h3 className="mt-3 text-base font-semibold">{skill}</h3>
+      <p className="mt-1 text-xs leading-5 text-gray-600 dark:text-gray-400">
+        {detail}
+      </p>
+    </article>
   );
 }
