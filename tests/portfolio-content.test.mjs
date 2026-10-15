@@ -56,9 +56,15 @@ test("five verified projects are featured with role and outcome", () => {
     assert.ok(project.summary);
     assert.ok(project.role);
     assert.ok(project.outcome);
+    assert.ok(project.evidence);
     assert.ok(Array.isArray(project.skills) && project.skills.length > 0);
     assert.ok(fs.existsSync(path.join(root, `public/mock/project/${project.id}.json`)));
   }
+  assert.match(projects.find((project) => project.id === 9).summary, /개인 프로젝트/);
+  assert.match(projects.find((project) => project.id === 8).summary, /개인 2인 팀 프로젝트/);
+  assert.equal(projects.find((project) => project.id === 9).github, undefined);
+  assert.ok(fs.existsSync(path.join(root, "public/itpe-quiz-screen.png")));
+  assert.ok(fs.existsSync(path.join(root, "public/boda-screen.png")));
 });
 
 test("project carousel stays manual for readability", () => {

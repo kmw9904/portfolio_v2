@@ -10,6 +10,7 @@ export default function Project({
   summary,
   role,
   outcome,
+  evidence,
   github,
   live,
   address,
@@ -21,6 +22,7 @@ export default function Project({
   summary: string;
   role: string;
   outcome: string;
+  evidence: string;
   github?: string;
   live?: string;
   address?: string;
@@ -41,7 +43,14 @@ export default function Project({
       >
         {img ? (
           <div className="relative h-full min-h-60 w-full transition-transform duration-300 hover:scale-[1.02]">
-            <Image src={img} fill alt={`${title} 대표 화면`} className="object-contain rounded-xl" />
+            <Image
+              src={img}
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 45vw"
+              alt={`${title} 실제 실행 화면`}
+              className="object-contain rounded-xl"
+            />
           </div>
         ) : (
           <div className="flex flex-col items-center text-center text-gray-600 dark:text-gray-300">
@@ -70,6 +79,10 @@ export default function Project({
           <div>
             <dt className="font-semibold text-indigo-600 dark:text-indigo-300">확인한 결과</dt>
             <dd className="mt-1 text-gray-700 dark:text-gray-300">{outcome}</dd>
+          </div>
+          <div>
+            <dt className="font-semibold text-indigo-600 dark:text-indigo-300">검증 근거</dt>
+            <dd className="mt-1 text-gray-700 dark:text-gray-300">{evidence}</dd>
           </div>
         </dl>
 

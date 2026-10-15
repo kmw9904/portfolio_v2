@@ -8,6 +8,7 @@ export interface ProjectData {
   summary: string;
   role: string;
   outcome: string;
+  evidence: string;
   github?: string;
   live?: string;
   address?: string;
