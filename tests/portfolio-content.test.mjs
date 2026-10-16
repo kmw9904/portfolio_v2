@@ -75,6 +75,14 @@ test("project carousel stays manual for readability", () => {
   assert.match(projects, /setActiveIndex/);
 });
 
+test("only the explicit detail button behaves like a project link", () => {
+  const project = read("src/components/projects/project.tsx");
+  const detailHrefCount = project.split('href={`/project/${id}`}').length - 1;
+
+  assert.equal(detailHrefCount, 1);
+  assert.doesNotMatch(project, /hover:scale/);
+});
+
 test("footer and visible main content have no stale year labels", () => {
   const footer = read("src/components/footer.tsx");
   const visible = [

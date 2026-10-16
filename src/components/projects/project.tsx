@@ -36,13 +36,9 @@ export default function Project({
 
   return (
     <article className="grid min-h-[520px] overflow-hidden rounded-lg bg-gray-100 shadow-lg dark:bg-gray-800 md:grid-cols-[0.9fr_1.1fr]">
-      <Link
-        href={`/project/${id}`}
-        className="relative flex min-h-64 items-center justify-center bg-gradient-to-br from-indigo-100 to-gray-200 p-6 dark:from-gray-900 dark:to-slate-950"
-        aria-label={`${title} 상세 보기`}
-      >
+      <div className="relative flex min-h-64 items-center justify-center bg-gradient-to-br from-indigo-100 to-gray-200 p-6 dark:from-gray-900 dark:to-slate-950">
         {img ? (
-          <div className="relative h-full min-h-60 w-full transition-transform duration-300 hover:scale-[1.02]">
+          <div className="relative h-full min-h-60 w-full">
             <Image
               src={img}
               fill
@@ -65,7 +61,7 @@ export default function Project({
             <p className="mt-2 text-sm">업무 프로젝트는 내부 코드를 공개하지 않습니다.</p>
           </div>
         )}
-      </Link>
+      </div>
 
       <div className="flex flex-col justify-center p-6 md:p-8">
         <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">{title}</h3>
