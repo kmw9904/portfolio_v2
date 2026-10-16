@@ -25,21 +25,24 @@ export default function Header() {
             </p>
           </div>
 
-          <div className="hidden md:flex items-center gap-x-6">
-            <a href="#home" className="hover:text-blue-500 transition-colors">
-              홈
+          <div className="hidden lg:flex items-center gap-x-5">
+            <a href="#journey" className="hover:text-blue-500 transition-colors">
+              흐름
             </a>
-            <a href="#about" className="hover:text-blue-500 transition-colors">
-              소개
-            </a>
-            <a href="#skills" className="hover:text-blue-500 transition-colors">
-              기술
+            <a href="#experience" className="hover:text-blue-500 transition-colors">
+              경력
             </a>
             <a
               href="#projects"
               className="hover:text-blue-500 transition-colors"
             >
               프로젝트
+            </a>
+            <a href="#skills" className="hover:text-blue-500 transition-colors">
+              기술
+            </a>
+            <a href="#about" className="hover:text-blue-500 transition-colors">
+              교육·자격
             </a>
             <a
               href="#contact"
@@ -59,7 +62,7 @@ export default function Header() {
           </div>
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="flex h-10 w-10 cursor-pointer flex-col items-center justify-center gap-1.5 rounded-md border border-gray-300 dark:border-gray-600 md:hidden"
+            className="flex h-10 w-10 cursor-pointer flex-col items-center justify-center gap-1.5 rounded-md border border-gray-300 dark:border-gray-600 lg:hidden"
             aria-label="메뉴 열기"
             aria-expanded={isOpen}
           >

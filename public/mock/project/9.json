@@ -1,6 +1,16 @@
 {
   "id": 9,
-  "img": "/itpe-quiz-screen.png",
+  "img": "/itpe-quiz-home.png",
+  "screens": [
+    {
+      "src": "/itpe-quiz-home.png",
+      "label": "시험 선택, 학습 통계, 오늘의 학습 계획을 보여주는 실제 홈 화면"
+    },
+    {
+      "src": "/itpe-quiz-screen.png",
+      "label": "계정별 기록 동기화를 시작하는 실제 로그인 화면"
+    }
+  ],
   "title": "ITPE Quiz 학습 서비스",
   "skills": ["React Native", "Next.js", "TypeScript", "Prisma", "PostgreSQL", "JWT"],
   "subtitle": [

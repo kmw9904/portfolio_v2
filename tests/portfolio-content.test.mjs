@@ -104,3 +104,43 @@ test("metadata describes an application development portfolio", () => {
   assert.match(layout, /응용 소프트웨어 개발 포트폴리오/);
   assert.match(layout, /openGraph/);
 });
+
+test("home page presents the candidate story before detailed evidence", () => {
+  const page = read("src/app/(main)/page.tsx");
+  const expectedOrder = ["<Introduce", "<Journey", "<Experience", "<WorkMethod", "<Projects", "<Skills", "<About", "<Contact"];
+  const positions = expectedOrder.map((token) => page.indexOf(token));
+
+  assert.ok(positions.every((position) => position >= 0));
+  assert.deepEqual([...positions].sort((a, b) => a - b), positions);
+});
+
+test("journey explains the transition from school to development work", () => {
+  const journey = read("src/components/journey.tsx");
+
+  assert.match(journey, /정치외교학/);
+  assert.match(journey, /EG@IG/);
+  assert.match(journey, /800시간/);
+  assert.match(journey, /Project Operation팀 AX/);
+});
+
+test("work method states how evidence becomes implementation", () => {
+  const workMethod = read("src/components/work-method.tsx");
+
+  assert.match(workMethod, /문제를 기준으로 바꿉니다/);
+  assert.match(workMethod, /구현 범위를 구분합니다/);
+  assert.match(workMethod, /배포 뒤 결과를 확인합니다/);
+});
+
+test("ITPE uses a feature screen instead of a login screen as its representative image", () => {
+  const projects = JSON.parse(read("public/mock/projects.json"));
+  const detail = JSON.parse(read("public/mock/project/9.json"));
+  const itpe = projects.find((project) => project.id === 9);
+  const boda = projects.find((project) => project.id === 8);
+  const bodaDetail = JSON.parse(read("public/mock/project/8.json"));
+
+  assert.equal(itpe.img, "/itpe-quiz-home.png");
+  assert.ok(fs.existsSync(path.join(root, "public/itpe-quiz-home.png")));
+  assert.ok(Array.isArray(detail.screens) && detail.screens.length >= 2);
+  assert.equal(boda.img, "/boda-overview.png");
+  assert.ok(Array.isArray(bodaDetail.screens) && bodaDetail.screens.length >= 1);
+});

@@ -1,6 +1,12 @@
 {
   "id": 8,
-  "img": "/boda-screen.png",
+  "img": "/boda-overview.png",
+  "screens": [
+    {
+      "src": "/boda-screen.png",
+      "label": "Android 에뮬레이터에서 빌드·설치 후 확인한 실제 로그인 화면"
+    }
+  ],
   "title": "Boda 견적·예약 통합 플랫폼",
   "skills": ["React", "TypeScript", "Vite", "Redux Toolkit", "Spring Boot API"],
   "subtitle": [

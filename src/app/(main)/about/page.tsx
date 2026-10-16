@@ -8,11 +8,13 @@ export default function AboutPage() {
 
   return (
     <section id="about" className="mb-16 px-4">
-      <h2 className="text-3xl font-bold mb-6 text-center">소개</h2>
+      <div className="mb-6">
+        <h2 className="text-3xl font-bold">교육·자격 근거</h2>
+        <p className="mt-2 text-gray-600 dark:text-gray-400">진로 전환과 기술 역량을 뒷받침하는 교육 및 자격입니다.</p>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* 🎓 교육 및 활동 */}
-        <article className="bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-6 hover:scale-[1.02] transition-transform duration-300">
-          <h3 className="text-xl font-semibold mb-4">🎓 교육 및 활동</h3>
+        <article className="bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-6">
+          <h3 className="text-xl font-semibold mb-4">교육 및 활동</h3>
           <ul className="space-y-2 text-gray-800 dark:text-gray-300 text-sm md:text-base">
             {certList.slice(0, 7).map((item) => (
               <li key={item.id}>
@@ -29,9 +31,8 @@ export default function AboutPage() {
           </ul>
         </article>
 
-        {/* 🎫 자격증 */}
-        <article className="bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-6 hover:scale-[1.02] transition-transform duration-300">
-          <h3 className="text-xl font-semibold mb-4">🎫 자격증</h3>
+        <article className="bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-6">
+          <h3 className="text-xl font-semibold mb-4">보유 자격</h3>
           <ul className="space-y-2 text-gray-800 dark:text-gray-300 text-sm md:text-base">
             {certList.slice(7).map((item) => (
               <li key={item.id}>

@@ -41,15 +41,34 @@ export default function Page({ params }: { params: Promise<{ id: string }> }) {
     <div className="flex flex-col items-center mt-12 mb-16 px-4">
       <h1 className="text-4xl font-bold mb-8">{project.title}</h1>
 
-      {project.img && (
+      {project.screens ? (
+        <div className="mb-10 grid w-full max-w-3xl gap-5 md:grid-cols-2">
+          {project.screens.map((screen) => (
+            <figure key={screen.src} className="rounded-xl bg-gray-100 p-4 dark:bg-gray-800">
+              <div className="relative mx-auto aspect-[9/16] max-h-[560px] overflow-hidden rounded-lg">
+                <Image
+                  src={screen.src}
+                  fill
+                  sizes="(max-width: 768px) 90vw, 360px"
+                  alt={screen.label}
+                  className="object-contain"
+                />
+              </div>
+              <figcaption className="mt-3 text-sm leading-6 text-gray-600 dark:text-gray-300">
+                {screen.label}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      ) : project.img ? (
         <Image
           src={project.img}
           width={600}
           height={300}
-          alt={`${project.title} 대표 화면`}
+          alt={`${project.title} 실제 실행 화면`}
           className="object-contain rounded-xl mb-8"
         />
-      )}
+      ) : null}
 
       <div className="prose dark:prose-invert max-w-2xl mb-12">
         <ReactMarkdown>{project.introduce}</ReactMarkdown>

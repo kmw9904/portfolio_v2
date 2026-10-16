@@ -17,6 +17,7 @@ export interface ProjectData {
 export interface IntroduceProjectData {
   id: number;
   img?: string;
+  screens?: { src: string; label: string }[];
   title: string;
   skills: string[];
   github?: string;

@@ -14,7 +14,7 @@ export default function Aside({
 }) {
   return (
     <aside
-      className={`dark:bg-gray-900 dark:text-white bg-white text-black min-h-screen transition-colors block md:hidden fixed top-0 right-0 inset-y-0 ${
+      className={`dark:bg-gray-900 dark:text-white bg-white text-black min-h-screen transition-colors block lg:hidden fixed top-0 right-0 inset-y-0 ${
         isOpen ? "translate-x-0" : "translate-x-full"
       } z-50`}
     >
@@ -25,19 +25,22 @@ export default function Aside({
         <FontAwesomeIcon icon={faTimes} />
       </button>
       <div className="flex flex-col items-start p-6 space-y-4">
-        <a href="#home" className="hover:text-blue-500 transition-colors">
-          홈
+        <a href="#journey" className="hover:text-blue-500 transition-colors" onClick={() => setIsOpen(false)}>
+          흐름
         </a>
-        <a href="#about" className="hover:text-blue-500 transition-colors">
-          소개
+        <a href="#experience" className="hover:text-blue-500 transition-colors" onClick={() => setIsOpen(false)}>
+          경력
         </a>
-        <a href="#skills" className="hover:text-blue-500 transition-colors">
-          기술
-        </a>
-        <a href="#projects" className="hover:text-blue-500 transition-colors">
+        <a href="#projects" className="hover:text-blue-500 transition-colors" onClick={() => setIsOpen(false)}>
           프로젝트
         </a>
-        <a href="#contact" className="hover:text-blue-500 transition-colors">
+        <a href="#skills" className="hover:text-blue-500 transition-colors" onClick={() => setIsOpen(false)}>
+          기술
+        </a>
+        <a href="#about" className="hover:text-blue-500 transition-colors" onClick={() => setIsOpen(false)}>
+          교육·자격
+        </a>
+        <a href="#contact" className="hover:text-blue-500 transition-colors" onClick={() => setIsOpen(false)}>
           연락처
         </a>
         <button
